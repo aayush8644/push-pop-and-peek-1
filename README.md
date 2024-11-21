@@ -1,16 +1,16 @@
 # push-pop-and-peek-1
-#include <stdio.h>
-#define SIZE 5
+    #include <stdio.h>
+    #define SIZE 5
 
-void push(int);
-void pop();
-int peek();
-void display();
+    void push(int);
+    void pop();
+    int peek();
+    void display();
 
-int stack[SIZE];
-int top = -1;
+    int stack[SIZE];
+    int top = -1;
 
-int main() {
+    int main() {
     int choice, data, r; // Declare 'r' for storing the peek value
     while (1) {
         printf("Enter 1 for push\n");
@@ -20,40 +20,40 @@ int main() {
         printf("Enter 5 for exit\n");
         scanf("%d", &choice);
         
- switch (choice) {
+    switch (choice) {
             case 1:
                 printf("Enter data: ");
                 scanf("%d", &data);
                 push(data);
                 break;
 
- case 2:
+    case 2:
                 pop();
                 break;
 
- case 3:
+    case 3:
                 r = peek();
                 if (r != -1) { // Check if peek was successful
                     printf("\n%d is on top\n", r);
                 }
                 break;
 
- case 4:
+    case 4:
                 display();
                 break;
 
-  case 5:
+    case 5:
                 printf("bye bye\n");
                 return 0;
 
-  default:
+    default:
                 printf("Invalid choice. Please try again.\n");
         }
     }
     return 0;
-}
+    }
 
-void push(int d) {
+    void push(int d) {
     if (top == SIZE - 1) {
         printf("\nStack overflow\n");
     } else {
@@ -61,27 +61,27 @@ void push(int d) {
         stack[top] = d;
         printf("\nPUSH successful\n");
     }
-}
+    }
 
-void pop() {
+    void pop() {
     if (top == -1) {
         printf("Stack underflow\n");
     } else {
         printf("%d is popped\n", stack[top]);
         top--;
     }
-}
+    }
 
-int peek() {
+    int peek() {
     if (top == -1) {
         printf("\nStack is empty\n");
         return -1; // Return -1 to indicate that the stack is empty
     } else {
         return stack[top];
     }
-}
+    }
 
-void display() {
+    void display() {
     if (top == -1) {
         printf("\nStack is empty\n");
     } else {
@@ -90,4 +90,4 @@ void display() {
             printf("%d\n", stack[i]);
         }
     }
-}
+    }
