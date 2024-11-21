@@ -20,33 +20,33 @@ int main() {
         printf("Enter 5 for exit\n");
         scanf("%d", &choice);
         
-        switch (choice) {
+ switch (choice) {
             case 1:
                 printf("Enter data: ");
                 scanf("%d", &data);
                 push(data);
                 break;
 
-            case 2:
+ case 2:
                 pop();
                 break;
 
-            case 3:
+ case 3:
                 r = peek();
                 if (r != -1) { // Check if peek was successful
                     printf("\n%d is on top\n", r);
                 }
                 break;
 
-            case 4:
+ case 4:
                 display();
                 break;
 
-            case 5:
+  case 5:
                 printf("bye bye\n");
                 return 0;
 
-            default:
+  default:
                 printf("Invalid choice. Please try again.\n");
         }
     }
